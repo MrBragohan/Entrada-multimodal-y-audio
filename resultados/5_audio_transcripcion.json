@@ -1,0 +1,26 @@
+[
+  {
+    "audio": "audio_01.wav",
+    "hablante": "?",
+    "ruido": false,
+    "referencia": "¿Qué es el chunking en un sistema RAG y cómo influye el tamaño del fragmento en la recuperación del contexto?",
+    "error": null,
+    "transcripcion": "que es el chunking en un sistema rack y como influye el tamaño del fragmento en la recuperación del contexto",
+    "duracion_s": 20.0,
+    "segundos_facturados": 20.0,
+    "wer": 0.15,
+    "respuesta": "# Chunking en un Sistema RAG\n\n## ¿Qué es?\n\nEl **chunking** es el proceso de dividir un documento largo en fragmentos (chunks) más pequeños antes de indexarlos en la base de vectores. Es el paso previo a la vectorización.\n\n```\nDocumento largo → [Chunk 1] [Chunk 2] [Chunk 3] ... → Embeddings → Base de vectores\n```\n\n## ¿Por qué se hace?\n\n- Los modelos de embedding tienen un **límite de tokens** de entrada.\n- Un documento completo diluye la semántica; un chunk enfoca el significado.\n- Permite recuperar **solo la parte relevante** en vez de todo el documento.\n\n## Influencia del tamaño del fragmento\n\n| Tamaño | Ventaja | Desventaja |\n|--------|---------|------------|\n| **Muy pequeño** (50-100 tokens) | Alta precisión semántica, recuperación exacta | Pierde contexto, puede fragmentar ideas, más chunks = más ruido |\n| **Medio** (256-512 tokens) | Equilibrio entre contexto y precisión | Puede no capturar relaciones lejanas |\n| **Muy grande** (1000+ tokens) | Mantiene contexto completo | Diluye el embedding, recupera información irrelevante, consume más tokens del LLM |\n\n## Efecto concreto en la recuperación\n\n```\nChunk pequeño:  \"La API usa autenticación OAuth2.\"\n                 → Embedding muy específico → solo recupera si la query menciona OAuth2\n\nChunk grande:   \"La API usa autenticación OAuth2. Los tokens expiran en 1h.\n                 Para renovar, se usa el refresh_token en /auth/refresh...\"\n                 → Embedding más general → puede recuperar para queries sobre\n                   tokens, expiración, renovación, etc.\n```\n\n## Estrategias comunes\n\n- **Fijo**: dividir cada N tokens (simple pero rígido).\n- **Por estructura**: usar encabezados, párrafos o secciones como límites.\n- **Con solapamiento (overlap)**: repetir los últimos X tokens del chunk anterior al inicio del siguiente, para no cortar ideas a la mitad.\n\n```\n[Chunk 1: tokens 0-512]\n[Chunk 2: tokens 448-960]   ← overlap de 64 tokens\n[Chunk 3: tokens 896-1408]\n```\n\n## Regla práctica\n\n> **Empieza con 256-512 tokens y 10-20% de overlap.** Ajusta según el dominio: documentos técnicos densos suelen funcionar mejor con chunks más pequeños; documentos narrativos o de contexto amplio, con chunks más grandes.\n\nEl tamaño óptimo siempre depende del **tipo de query** que esperes recibir. Si las preguntas son específicas → chunks pequeños. Si son de alto nivel → chunks más grandes."
+  },
+  {
+    "audio": "audio_02.wav",
+    "hablante": "?",
+    "ruido": false,
+    "referencia": "¿Cómo se mide la fidelidad de una respuesta con Ragas y qué significa la métrica faithfulness?",
+    "error": null,
+    "transcripcion": "¿Cómo se mide la fidelidad de una respuesta con ragas? ¿Y qué significa la métrica Faithfulness?",
+    "duracion_s": 20.0,
+    "segundos_facturados": 20.0,
+    "wer": 0.0,
+    "respuesta": "## Faithfulness en RAGAS\n\n### ¿Qué mide?\n\n**Faithfulness** mide si la respuesta generada es **factualmente consistente** con el contexto recuperado. Es decir, verifica que la respuesta no invente información que no está en los documentos recuperados.\n\n### ¿Cómo se calcula?\n\nEl proceso es:\n\n1. **Descomposición** → Se extraen las afirmaciones (claims) individuales de la respuesta generada.\n2. **Verificación** → Cada afirmación se contrasta contra el contexto recuperado para determinar si es inferible de él.\n3. **Cálculo** →\n\n$$\\text{Faithfulness} = \\frac{\\text{Afirmaciones soportadas por el contexto}}{\\text{Total de afirmaciones en la respuesta}}$$\n\n### Ejemplo\n\n| Afirmación en la respuesta | ¿Soportada por el contexto? |\n|---|---|\n| \"El sistema usa PostgreSQL\" | ✅ Sí |\n| \"La latencia es de 50ms\" | ✅ Sí |\n| \"El sistema soporta 10,000 usuarios\" | ❌ No aparece en el contexto |\n\n**Faithfulness = 2/3 ≈ 0.67**\n\n### Interpretación\n\n| Valor | Significado |\n|-------|-------------|\n| 1.0 | La respuesta es 100% fiel al contexto (no hay alucinaciones) |\n| 0.0 | Ninguna afirmación está soportada (respuesta completamente inventada) |\n\n### Diferencia clave con otras métricas de RAGAS\n\n- **Faithfulness** → ¿La respuesta se basa en el contexto? (evita alucinaciones)\n- **Answer Relevancy** → ¿La respuesta responde a la pregunta?\n- **Context Precision** → ¿El contexto recuperado es relevante?\n- **Context Recall** → ¿El contexto recuperado cubre la información necesaria?\n\n### En resumen\n\n> Faithfulness responde a: *\"¿El modelo se inventó algo que no estaba en los documentos que le pasaste?\"*\n\nEs la métrica más directa para detectar **alucinaciones** en pipelines RAG."
+  }
+]

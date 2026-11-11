@@ -1,0 +1,224 @@
+[
+  {
+    "imagen": "ejemplo_01_arquitectura_rag.png",
+    "valido": true,
+    "errores": [],
+    "extraido": {
+      "tipo_contenido": "diagrama",
+      "titulo": "Arquitectura del pipeline RAG",
+      "idioma": "es",
+      "numero_de_elementos": 6,
+      "terminos_tecnicos": [
+        "Chunking",
+        "Embeddings",
+        "LLM",
+        "top_k",
+        "Chroma"
+      ],
+      "contiene_numeros": false
+    },
+    "comparacion": [
+      {
+        "campo": "tipo_contenido",
+        "esperado": "diagrama",
+        "extraido": "diagrama",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "titulo",
+        "esperado": "Arquitectura del pipeline RAG",
+        "extraido": "Arquitectura del pipeline RAG",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "idioma",
+        "esperado": "es",
+        "extraido": "es",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "numero_de_elementos",
+        "esperado": 6,
+        "extraido": 6,
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "terminos_tecnicos",
+        "esperado": [
+          "Chunking",
+          "Embeddings",
+          "Chroma",
+          "top_k",
+          "LLM"
+        ],
+        "extraido": [
+          "Chunking",
+          "Embeddings",
+          "LLM",
+          "top_k",
+          "Chroma"
+        ],
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "contiene_numeros",
+        "esperado": false,
+        "extraido": false,
+        "puntaje": 1.0,
+        "acierto": true
+      }
+    ],
+    "respuesta_cruda": "{\"tipo_contenido\":\"diagrama\",\"titulo\":\"Arquitectura del pipeline RAG\",\"idioma\":\"es\",\"numero_de_elementos\":6,\"terminos_tecnicos\":[\"Chunking\",\"Embeddings\",\"LLM\",\"top_k\",\"Chroma\"],\"contiene_numeros\":false}"
+  },
+  {
+    "imagen": "ejemplo_02_tabla_metricas.png",
+    "valido": true,
+    "errores": [],
+    "extraido": {
+      "tipo_contenido": "tabla",
+      "titulo": "Resultados Ragas - baseline",
+      "idioma": "es",
+      "numero_de_elementos": 4,
+      "terminos_tecnicos": [
+        "faithfulness",
+        "answer_relevancy",
+        "context_precision",
+        "context_recall"
+      ],
+      "contiene_numeros": true
+    },
+    "comparacion": [
+      {
+        "campo": "tipo_contenido",
+        "esperado": "tabla",
+        "extraido": "tabla",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "titulo",
+        "esperado": "Resultados Ragas - baseline",
+        "extraido": "Resultados Ragas - baseline",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "idioma",
+        "esperado": "es",
+        "extraido": "es",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "numero_de_elementos",
+        "esperado": 4,
+        "extraido": 4,
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "terminos_tecnicos",
+        "esperado": [
+          "faithfulness",
+          "answer_relevancy",
+          "context_precision",
+          "context_recall"
+        ],
+        "extraido": [
+          "faithfulness",
+          "answer_relevancy",
+          "context_precision",
+          "context_recall"
+        ],
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "contiene_numeros",
+        "esperado": true,
+        "extraido": true,
+        "puntaje": 1.0,
+        "acierto": true
+      }
+    ],
+    "respuesta_cruda": "{\"tipo_contenido\":\"tabla\",\"titulo\":\"Resultados Ragas - baseline\",\"idioma\":\"es\",\"numero_de_elementos\":4,\"terminos_tecnicos\":[\"faithfulness\",\"answer_relevancy\",\"context_precision\",\"context_recall\"],\"contiene_numeros\":true}"
+  },
+  {
+    "imagen": "ejemplo_05_captura_codigo.png",
+    "valido": true,
+    "errores": [],
+    "extraido": {
+      "tipo_contenido": "captura_de_codigo",
+      "titulo": null,
+      "idioma": "es",
+      "numero_de_elementos": 0,
+      "terminos_tecnicos": [
+        "SYSTEM_INSTRUCTION",
+        "GenerateContentConfig",
+        "system_instruction",
+        "types",
+        "IA"
+      ],
+      "contiene_numeros": false
+    },
+    "comparacion": [
+      {
+        "campo": "tipo_contenido",
+        "esperado": "captura_de_codigo",
+        "extraido": "captura_de_codigo",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "titulo",
+        "esperado": null,
+        "extraido": null,
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "idioma",
+        "esperado": "es",
+        "extraido": "es",
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "numero_de_elementos",
+        "esperado": 0,
+        "extraido": 0,
+        "puntaje": 1.0,
+        "acierto": true
+      },
+      {
+        "campo": "terminos_tecnicos",
+        "esperado": [
+          "SYSTEM_INSTRUCTION",
+          "GenerateContentConfig"
+        ],
+        "extraido": [
+          "SYSTEM_INSTRUCTION",
+          "GenerateContentConfig",
+          "system_instruction",
+          "types",
+          "IA"
+        ],
+        "puntaje": 0.75,
+        "acierto": false
+      },
+      {
+        "campo": "contiene_numeros",
+        "esperado": false,
+        "extraido": false,
+        "puntaje": 1.0,
+        "acierto": true
+      }
+    ],
+    "respuesta_cruda": "{\"tipo_contenido\":\"captura_de_codigo\",\"titulo\":null,\"idioma\":\"es\",\"numero_de_elementos\":0,\"terminos_tecnicos\":[\"SYSTEM_INSTRUCTION\",\"GenerateContentConfig\",\"system_instruction\",\"types\",\"IA\"],\"contiene_numeros\":false}"
+  }
+]

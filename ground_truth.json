@@ -1,0 +1,28 @@
+{
+  "_instrucciones": "Para CADA imagen que uses en la extracción (parte 1.2) escribe aquí los valores REALES que tú lees en ella, con los mismos 6 campos del esquema (ver esquema.py). Las 3 entradas de abajo corresponden a las imágenes de ejemplo; reemplázalas por las de tu dominio. Las claves que empiezan con _ se ignoran.",
+
+  "ejemplo_01_arquitectura_rag.png": {
+    "tipo_contenido": "diagrama",
+    "titulo": "Arquitectura del pipeline RAG",
+    "idioma": "es",
+    "numero_de_elementos": 6,
+    "terminos_tecnicos": ["Chunking", "Embeddings", "Chroma", "top_k", "LLM"],
+    "contiene_numeros": false
+  },
+  "ejemplo_02_tabla_metricas.png": {
+    "tipo_contenido": "tabla",
+    "titulo": "Resultados Ragas - baseline",
+    "idioma": "es",
+    "numero_de_elementos": 4,
+    "terminos_tecnicos": ["faithfulness", "answer_relevancy", "context_precision", "context_recall"],
+    "contiene_numeros": true
+  },
+  "ejemplo_05_captura_codigo.png": {
+    "tipo_contenido": "captura_de_codigo",
+    "titulo": null,
+    "idioma": "es",
+    "numero_de_elementos": 0,
+    "terminos_tecnicos": ["SYSTEM_INSTRUCTION", "GenerateContentConfig"],
+    "contiene_numeros": false
+  }
+}

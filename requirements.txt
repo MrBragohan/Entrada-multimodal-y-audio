@@ -1,0 +1,7 @@
+groq
+python-dotenv
+pydantic
+Pillow
+# Solo para grabar audios con el micrófono (grabar_audio.py):
+sounddevice
+scipy

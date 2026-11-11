@@ -1,0 +1,51 @@
+[
+  {
+    "escenario": "sin_vision",
+    "modelo": "openai/gpt-oss-20b",
+    "hubo_error": true,
+    "tipo": "BadRequestError",
+    "codigo_http": 400,
+    "mensaje": "Error code: 400 - {'error': {'message': 'messages[0].content must be a string', 'type': 'invalid_request_error', 'param': 'messages[0].content'}}",
+    "cuerpo": {
+      "error": {
+        "message": "messages[0].content must be a string",
+        "type": "invalid_request_error",
+        "param": "messages[0].content"
+      }
+    }
+  },
+  {
+    "escenario": "demasiadas_imagenes",
+    "modelo": "qwen/qwen3.8-27b",
+    "hubo_error": true,
+    "tipo": "BadRequestError",
+    "codigo_http": 400,
+    "mensaje": "Error code: 400 - {'error': {'message': 'Too many images provided.  This model supports up to 3 images', 'type': 'invalid_request_error'}}",
+    "cuerpo": {
+      "error": {
+        "message": "Too many images provided.  This model supports up to 3 images",
+        "type": "invalid_request_error"
+      }
+    }
+  },
+  {
+    "escenario": "imagen_invalida",
+    "modelo": "qwen/qwen3.8-27b",
+    "hubo_error": true,
+    "tipo": "BadRequestError",
+    "codigo_http": 400,
+    "mensaje": "Error code: 400 - {'error': {'message': 'invalid image data', 'type': 'invalid_request_error'}}",
+    "cuerpo": {
+      "error": {
+        "message": "invalid image data",
+        "type": "invalid_request_error"
+      }
+    }
+  },
+  {
+    "escenario": "tipo_mal_declarado",
+    "modelo": "qwen/qwen3.8-27b",
+    "hubo_error": false,
+    "respuesta": "En la imagen veo un **diagrama de flujo** titulado **\"Arquitectura del pipeline RAG\"** (RAG = *Retrieval‑Augmented Generation*), que ilustra las etapas de un sistema de generación aumentada por recuperación. El diagrama está compuesto por seis bloques redondeados de distintos colores, unidos por fle"
+  }
+]

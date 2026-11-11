@@ -1,0 +1,12 @@
+{
+  "audio_01.wav": {
+    "texto": "¿Qué es el chunking en un sistema RAG y cómo influye el tamaño del fragmento en la recuperación del contexto?",
+    "hablante": "?",
+    "ruido": false
+  },
+  "audio_02.wav": {
+    "texto": "¿Cómo se mide la fidelidad de una respuesta con Ragas y qué significa la métrica faithfulness?",
+    "hablante": "?",
+    "ruido": false
+  }
+}
